@@ -52,8 +52,8 @@ jobs:
       run: |
         go get github.com/franela/goblin
         go get github.com/tebeka/go2xunit
-        go test -v
         go test -v  | go2xunit > report.xml
+        go test -v
         ls
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1
