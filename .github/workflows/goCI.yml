@@ -75,6 +75,11 @@ jobs:
     - if: ${{ success() }}
       name: Create download directory
       run: mkdir downloads
+      
+    - name: Prepare Documents
+      run: |
+        mv report.xml ./downloads
+        
     - if: ${{ success() }}
       name: Prepare artifacts
       uses: actions/upload-artifact@v2
